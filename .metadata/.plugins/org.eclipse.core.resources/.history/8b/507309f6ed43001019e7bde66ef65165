@@ -1,0 +1,68 @@
+package model;
+
+import java.sql.Date;
+
+public class Takmicenje {
+	
+	private String kategorija;
+    private Date date;
+    private String pobednik;
+    private String pobednica;
+    private String rezultat;
+    
+	public Takmicenje() {
+		super();
+	}
+
+	public Takmicenje(String kategorija, Date date, String pobednik, String pobednica, String rezultat) {
+		super();
+		this.kategorija = kategorija;
+		this.date = date;
+		this.pobednik = pobednik;
+		this.pobednica = pobednica;
+		this.rezultat = rezultat;
+	}
+
+	public String getKategorija() {
+		return kategorija;
+	}
+
+	public void setKategorija(String kategorija) {
+		this.kategorija = kategorija;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getPobednik() {
+		return pobednik;
+	}
+
+	public void setPobednik(String pobednik) {
+		this.pobednik = pobednik;
+	}
+
+	public String getPobednica() {
+		return pobednica;
+	}
+
+	public void setPobednica(String pobednica) {
+		this.pobednica = pobednica;
+	}
+
+	public String getRezultat() {
+		return rezultat;
+	}
+
+	public void setRezultat(String rezultat) {
+		this.rezultat = rezultat;
+	}
+    
+    
+
+}

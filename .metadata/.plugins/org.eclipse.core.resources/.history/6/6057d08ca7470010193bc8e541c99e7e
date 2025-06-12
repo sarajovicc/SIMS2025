@@ -1,0 +1,40 @@
+package View;
+
+import java.awt.BorderLayout;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import kontroler.TakmicenjeController;
+
+import javax.swing.JScrollPane;
+
+
+import model.Takmicenje;
+import java.awt.Color;
+
+public class IstorijaTakmicenjaView extends JFrame{
+	private JTable table;
+    private DefaultTableModel tableModel;
+
+    public IstorijaTakmicenjaView(List<Takmicenje> competitions, TakmicenjeController takmicenjeController) {
+    	setBackground(new Color(128, 128, 192));
+        setTitle("Istorija takmičenja");
+        setSize(600, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        tableModel = new DefaultTableModel(new Object[]{"Naziv", "Datum"}, 0);
+        table = new JTable(tableModel);
+
+        for (Takmicenje comp : competitions) {
+            tableModel.addRow(new Object[]{comp.getKategorija(), comp.getDatum()});
+        }
+
+        getContentPane().add(new JScrollPane(table), BorderLayout.CENTER);
+
+    }
+   
+}

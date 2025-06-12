@@ -1,0 +1,65 @@
+package model;
+
+import java.sql.Date;
+
+public class Takmicenje {
+	
+	private String kategorija;
+    private Date date;
+    private String pobednik;
+    private String pobednica;
+    
+	public Takmicenje() {
+		super();
+	}
+
+	public Takmicenje(String kategorija, Date date, String pobednik, String pobednica) {
+		super();
+		this.kategorija = kategorija;
+		this.date = date;
+		this.pobednik = pobednik;
+		this.pobednica = pobednica;
+	}
+
+	public String getKategorija() {
+		return kategorija;
+	}
+
+	public void setKategorija(String kategorija) {
+		this.kategorija = kategorija;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getPobednik() {
+		return pobednik;
+	}
+
+	public void setPobednik(String pobednik) {
+		this.pobednik = pobednik;
+	}
+
+	public String getPobednica() {
+		return pobednica;
+	}
+
+	public void setPobednica(String pobednica) {
+		this.pobednica = pobednica;
+	}
+
+	@Override
+	public String toString() {
+		return "Takmicenje [kategorija=" + kategorija + ", date=" + date + ", pobednik=" + pobednik + ", pobednica="
+				+ pobednica + "]";
+	}
+
+	
+    
+
+}

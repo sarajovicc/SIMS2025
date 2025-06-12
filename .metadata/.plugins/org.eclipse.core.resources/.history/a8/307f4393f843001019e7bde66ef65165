@@ -1,0 +1,70 @@
+package View;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.SpringLayout;
+
+import model.TakmicenjaRepository;
+import model.Takmicenje;
+
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.awt.event.ActionEvent;
+
+public class TrenerPocetniView extends JFrame {
+	public TrenerPocetniView() {
+		setTitle("Trener");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setBackground(new Color(128, 128, 192));
+		SpringLayout springLayout = new SpringLayout();
+		getContentPane().setLayout(springLayout);
+		
+		JButton btnNewButton_1 = new JButton("Zakaži trening");
+		getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Pregled napretka klijenta");
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_1, 0, SpringLayout.WEST, btnNewButton_2);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -6, SpringLayout.NORTH, btnNewButton_2);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_2, 40, SpringLayout.WEST, getContentPane());
+		getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Određivanje nagradne kategorije");
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_3, 40, SpringLayout.WEST, getContentPane());
+		getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton = new JButton("Uvid u istoriju takmičenja");
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 40, SpringLayout.WEST, getContentPane());
+		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_4 = new JButton("Postavljanje termina grupnog treninga");
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton_4, -147, SpringLayout.SOUTH, getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton_3, 6, SpringLayout.SOUTH, btnNewButton_4);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton_2, -6, SpringLayout.NORTH, btnNewButton_4);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_4, 40, SpringLayout.WEST, getContentPane());
+		getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Unos rezultata takmičenja");
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton_5, 40, SpringLayout.WEST, getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 8, SpringLayout.SOUTH, btnNewButton_5);
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton_5, 6, SpringLayout.SOUTH, btnNewButton_3);
+		getContentPane().add(btnNewButton_5);
+		
+		 // >>> Dodavanje ActionListener-a <<<
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                List<Takmicenje> lista = new TakmicenjaRepository().getAllCompetitions();
+                IstorijaTakmicenjaView istorija = new IstorijaTakmicenjaView(lista);
+                istorija.setVisible(true);
+            }
+        });
+	}
+	
+	
+
+}

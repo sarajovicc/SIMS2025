@@ -1,0 +1,12 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TakmicenjaRepository {
+	public List<Takmicenje> getAllCompetitions(){
+		List<Takmicenje>takmicenja = new ArrayList<>();
+	takmicenja.add(new Takmicenje("preskakanje konopca","12.4.2024.","ana","milan"));
+	return takmicenja;
+}
+}
