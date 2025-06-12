@@ -10,9 +10,7 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
-import kontroler.TakmicenjeController;
-import model.TakmicenjaRepository;
-import model.Takmicenje;
+import controller.TakmicenjeController;
 
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -20,13 +18,15 @@ import java.awt.event.ActionEvent;
 
 public class TrenerPocetniView extends JFrame {
 	
-	public TrenerPocetniView(TakmicenjeController controller) {
+	public TrenerPocetniView(TakmicenjeController takmicenjeController) {
+
 		setTitle("Trener");
 		setSize(600, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground(new Color(128, 128, 192));
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
+
 		setLocationRelativeTo(null);
 
 		
@@ -47,8 +47,9 @@ public class TrenerPocetniView extends JFrame {
 		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 40, SpringLayout.WEST, getContentPane());
 		getContentPane().add(btnNewButton);
 		
-		btnNewButton.addActionListener(e -> controller.prikaziIstoriju());
-		
+
+		btnNewButton.addActionListener(e -> takmicenjeController.prikaziIstoriju());
+
 		JButton btnNewButton_4 = new JButton("Postavljanje termina grupnog treninga");
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton_4, -147, SpringLayout.SOUTH, getContentPane());
 		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton_3, 6, SpringLayout.SOUTH, btnNewButton_4);
@@ -62,6 +63,7 @@ public class TrenerPocetniView extends JFrame {
 		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton_5, 6, SpringLayout.SOUTH, btnNewButton_3);
 		getContentPane().add(btnNewButton_5);
 		
+
 	}
 	
 	

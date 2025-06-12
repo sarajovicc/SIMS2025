@@ -1,13 +1,13 @@
-package kontroler;
-
+package controller;
+ 
 import java.util.List;
-
+ 
 import View.DetaljiOTakmicenjuView;
 import View.IstorijaTakmicenjaView;
 import View.TrenerPocetniView;
 import model.TakmicenjaRepository;
 import model.Takmicenje;
-
+ 
 public class TakmicenjeController {
 	private TrenerPocetniView pocetniView;
     private List<Takmicenje> takmicenja;
@@ -29,4 +29,6 @@ public class TakmicenjeController {
     	DetaljiOTakmicenjuView detalji = new DetaljiOTakmicenjuView(takmicenje);
         detalji.setVisible(true);
     }
+
+ 
 }

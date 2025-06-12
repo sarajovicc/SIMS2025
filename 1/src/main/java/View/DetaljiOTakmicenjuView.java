@@ -1,13 +1,13 @@
 package View;
 
-import java.awt.GridLayout;
 
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import model.Takmicenje;
+ 
 
 public class DetaljiOTakmicenjuView extends JFrame {
 	
@@ -15,6 +15,7 @@ public class DetaljiOTakmicenjuView extends JFrame {
 		setTitle("Detalji takmičenja");
         setSize(400, 200);
         setLocationRelativeTo(null);
+
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JPanel panel = new JPanel(new GridLayout(5, 1));
@@ -30,3 +31,4 @@ public class DetaljiOTakmicenjuView extends JFrame {
         setVisible(true);
 	}
 }
+
