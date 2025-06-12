@@ -1,0 +1,26 @@
+package controller;
+ 
+import java.util.List;
+ 
+import View.DetaljiOTakmicenjuView;
+import View.IstorijaTakmicenjaView;
+import model.TakmicenjaRepository;
+import model.Takmicenje;
+ 
+public class TakmicenjeController {
+	private List<Takmicenje> takmicenje;
+	private IstorijaTakmicenjaView istorija;
+	
+	public TakmicenjeController() {
+		TakmicenjaRepository repository = new TakmicenjaRepository();
+		takmicenje = repository.getAllCompetitions();
+		istorija = new IstorijaTakmicenjaView(takmicenje,this);
+		istorija.setVisible(true);
+		
+		public void selektovano(int index) {
+			Takmicenje selektovano = takmicenje.get(index);
+			new DetaljiOTakmicenjuView(selektovano);
+		}
+	}
+ 
+}
